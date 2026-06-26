@@ -108,3 +108,9 @@ Inflight Entertainment was identified as the strongest positive predictor of cus
 
 * `logistic_regression_analysis.ipynb` – Complete analysis and model development notebook.
 * `README.md` – Project summary, methodology, results, and business recommendations.
+
+## Conclusion
+
+This project developed a Logistic Regression model to predict airline passenger satisfaction based on passenger and flight-related features. The model achieved an accuracy of 83%, precision of 84.4%, recall of 84.3%, and an F1-score of 84.3%, demonstrating strong and balanced classification performance. The confusion matrix also showed that the model made a similar number of false positive and false negative predictions, indicating balanced error rates across both classes.
+
+These results suggest that Logistic Regression is an effective baseline model for predicting passenger satisfaction and can support airlines in identifying potentially dissatisfied passengers, enabling data-driven decisions to improve customer experience and service quality.
