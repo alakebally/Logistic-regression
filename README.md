@@ -14,19 +14,38 @@ The dataset contains passenger demographics, travel information, service quality
 * Encoded categorical variables for machine learning compatibility.
 * Split the dataset into training (80%) and testing (20%) sets using stratified sampling.
 * Standardized predictor variables using StandardScaler.
+* Documented the assumptions of the Logistic Regression model.
 * Trained a Binomial Logistic Regression model to predict customer satisfaction probabilities.
-* Evaluated model performance using a Confusion Matrix, Precision, Recall, and Classification Report.
-* observations on LImation and recommendation for future improvements of model
+* Evaluated model performance using a Confusion Matrix, Precision, Recall, F1-score, and Classification Report.
+* Interpreted model coefficients, discussed limitations, and proposed recommendations for future improvements.
+
+## Logistic Regression Assumptions
+The target variable is binary (Satisfied or Dissatisfied).
+Observations are assumed to be independent.
+Categorical variables were encoded into numerical features using one-hot encoding.
+Missing values were handled prior to model training.
+Continuous features were standardized to improve model convergence.
+Logistic Regression assumes a linear relationship between continuous predictors and the log-odds of the outcome. This assumption was acknowledged but not formally tested in this project.
+
 
 ## Model Performance
 
-| Metric    | Score |
-| --------- | ----: |
-| Accuracy  |   83% |
-| Precision | 84.4% |
-| Recall    | 84.3% |
+Confusion Matrix
 
-The model demonstrated balanced predictive performance, effectively identifying satisfied passengers while maintaining a low rate of incorrect positive predictions.
+| Actual / Predicted | Dissatisfied | Satisfied |
+|-------------------|-------------:|-----------:|
+| Dissatisfied | 9546 | 2213 |
+| Satisfied | 2232 | 11985 |
+
+| Metric | Score |
+|----------|---------:|
+| Accuracy | 83% |
+| Precision | 84.4% |
+| Recall | 84.3% |
+| F1-Score | 84.3% |
+
+The Logistic Regression model achieved an accuracy of 83%, with precision (84.4%), recall (84.3%), and an F1-score of 84.3%, indicating a good balance between correctly identifying satisfied passengers and minimizing false classifications.
+Overall, The model demonstrated balanced predictive performance, effectively identifying satisfied passengers while maintaining a balanced trade-off between false positives and false negatives.
 
 ## Key Drivers of Customer Satisfaction
 
@@ -53,7 +72,7 @@ Inflight Entertainment was identified as the strongest positive predictor of cus
 ## Business Recommendations
 
 * Invest in enhancing inflight entertainment offerings to improve passenger experience.
-* Improve seat comfort, leg room, and onboard service quality.
+* Improve seat comfort, leg room, and on-board service quality.
 * Streamline the online booking and check-in processes.
 * Reduce operational delays and improve delay communication.
 * Strengthen customer loyalty programs to improve retention and satisfaction.
@@ -71,15 +90,20 @@ Inflight Entertainment was identified as the strongest positive predictor of cus
 * Incorporate additional operational and customer behavior variables.
 * Deploy the model within customer experience systems for real-time satisfaction prediction and proactive service recovery.
 
-## Technologies Used
+## Technologies
 
 * Python
+* Jupyter Notebook
+* Google Colab
+* Git
+* GitHub
+
+## Python Libraries
+
 * Pandas
 * NumPy
 * Scikit-learn
 * Matplotlib
-* Google Colab
-
 ## Repository Contents
 
 * `logistic_regression_analysis.ipynb` – Complete analysis and model development notebook.
